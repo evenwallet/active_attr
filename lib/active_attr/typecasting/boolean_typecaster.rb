@@ -35,7 +35,7 @@ module ActiveAttr
         case value
         when *FALSE_VALUES then false
         when Numeric, /\A[-+]?(0+\.?0*|0*\.?0+)\z/ then !value.to_f.zero?
-        when !value.present? then nil
+        when '' then nil
         else true
         end
       end
